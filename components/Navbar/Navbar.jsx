@@ -13,7 +13,7 @@ export default function Navbar() {
             height={40}
           />
         </div>
-        <div className="mx-6">
+        <div className="mx-6 md:hidden">
           <Image
             src="/shared/icon-hamburger.svg"
             alt="Menu Icon"

@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 export default function NavbarLinks() {
   return (
-    <div className="fixed inset-y-0 -right-2/3 w-2/3 bg-purple-700/10">
-      <button className="z-10 m-8 mb-16 ml-64">
+    <div className="mobile:fixed mobile:inset-y-0 mobile:-right-2/3 mobile:w-2/3 bg-purple-700/10">
+      <button className="z-10 m-8 mb-16 ml-64 md:hidden">
         <Image
           src="/shared/icon-close.svg"
           alt="Close Button"
@@ -12,7 +12,7 @@ export default function NavbarLinks() {
           height={24}
         />
       </button>
-      <div className="flex flex-col pl-9 space-y-9">
+      <div className="flex mobile:flex-col mobile:pl-9 mobile:space-y-9 gap-9 px-8 py-4 lg:pr-20">
         <Link href="/">
           <a>
             <span className="mr-2">00</span>Home
