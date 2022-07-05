@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function NavbarLinks() {
+  const router = useRouter();
   return (
-    <div className="mobile:fixed mobile:inset-y-0 mobile:-right-2/3 mobile:w-2/3 bg-purple-700/10">
+    <div className="bg-white/20 text-lg text-white backdrop-blur-md mobile:fixed mobile:inset-y-0 mobile:-right-2/3 mobile:w-2/3 lg:min-w-[50%] ">
       <button className="z-10 m-8 mb-16 ml-64 md:hidden">
         <Image
           src="/shared/icon-close.svg"
@@ -12,25 +14,42 @@ export default function NavbarLinks() {
           height={24}
         />
       </button>
-      <div className="flex mobile:flex-col mobile:pl-9 mobile:space-y-9 gap-9 px-8 py-4 lg:pr-20">
+      <div className="flex h-24 items-center  gap-12 px-8 mobile:flex-col mobile:space-y-9 mobile:pl-9 md:min-w-[50%] md:px-12 lg:ml-16 lg:pr-20">
         <Link href="/">
-          <a>
-            <span className="mr-2">00</span>Home
+          <a
+            className={` ${
+              router.asPath === '/' ? 'border-b-[3px]' : ''
+            } py-4 md:py-8`}
+          >
+            <span className="mr-2 md:hidden lg:inline-block">00</span>Home
           </a>
         </Link>
-        <Link href="/">
-          <a>
-            <span className="mr-2">01</span>Destination
+        <Link href="/destination">
+          <a
+            className={` ${
+              router.asPath === '/destination' ? 'border-b-[3px]' : ''
+            } py-4 md:py-8`}
+          >
+            <span className="mr-2 md:hidden lg:inline-block">01</span>
+            Destination
           </a>
         </Link>
-        <Link href="/">
-          <a>
-            <span className="mr-2">02</span>Crew
+        <Link href="/crew">
+          <a
+            className={` ${
+              router.asPath === '/crew' ? 'border-b-[3px]' : ''
+            } py-4 md:py-8`}
+          >
+            <span className="mr-2 md:hidden lg:inline-block">02</span>Crew
           </a>
         </Link>
-        <Link href="/">
-          <a>
-            <span className="mr-2">03</span>Technology
+        <Link href="/technology">
+          <a
+            className={` ${
+              router.asPath === '/technology' ? 'border-b-[3px]' : ''
+            } py-4 md:py-8`}
+          >
+            <span className="mr-2 md:hidden lg:inline-block">03</span>Technology
           </a>
         </Link>
       </div>

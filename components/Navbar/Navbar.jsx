@@ -4,23 +4,25 @@ import NavbarLinks from './NavbarLinks';
 export default function Navbar() {
   return (
     <>
-      <nav className="flex justify-between items-center pt-6 w-screen overflow-x-hidden">
-        <div className="mx-6 ">
+      <nav className="mb-6 flex items-center justify-between p-6 font-BarlowCondensed md:mb-24 md:p-0">
+        {/* main Logo in navbar */}
+        <div className="relative aspect-square w-10 md:m-6 md:w-12">
           <Image
             src="/shared/logo.svg"
             alt="Website Logo"
-            width={40}
-            height={40}
+            layout="fill"
+            quality={100}
           />
         </div>
-        <div className="mx-6 md:hidden">
+        {/* hamburger icon */}
+        <div className="relative h-5 w-6 md:hidden">
           <Image
             src="/shared/icon-hamburger.svg"
             alt="Menu Icon"
-            width={32}
-            height={26}
+            layout="fill"
           />
         </div>
+        {/* navbar links */}
         <NavbarLinks />
       </nav>
     </>

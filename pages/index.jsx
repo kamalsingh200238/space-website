@@ -1,15 +1,12 @@
-import Head from 'next/head';
-
-// Components
-import Navbar from '../components/Navbar/Navbar';
+import HomePageContent from '../components/HomepageContent';
 
 export default function Home() {
   return (
-    <section
-      className={`bg-home-mobile bg-no-repeat bg-cover md:bg-home-tablet lg:bg-home-desktop h-screen`}
-    >
-      <Navbar />
-      
-    </section>
+    <>
+      <div
+        className={`absolute inset-0 -z-50 bg-home-mobile bg-cover bg-no-repeat md:bg-home-tablet lg:bg-home-desktop`}
+      ></div>
+      <HomePageContent />
+    </>
   );
 }
