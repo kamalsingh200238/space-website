@@ -20,18 +20,20 @@ module.exports = {
 
       xl: '1280px',
       // => @media (min-width: 1280px) { ... }
+      '2xl': '1536',
+      // => @media (min-width: 1280px) { ... }
 
       // max - width
       m2xl: { max: '1535px' },
       // => @media (max-width: 1535px) { ... }
 
-      desktop: { max: '1279px' },
+      mlx: { max: '1279px' },
       // => @media (max-width: 1279px) { ... }
 
-      laptop: { max: '1023px' },
+      mlg: { max: '1023px' },
       // => @media (max-width: 1023px) { ... }
 
-      mobile: { max: '767px' },
+      mmd: { max: '767px' },
       // => @media (max-width: 767px) { ... }
 
       msm: { max: '639px' },
@@ -53,7 +55,6 @@ module.exports = {
       o2xl: { min: '1536px' },
       // => @media (min-width: 1536px) { ... }
     },
-
     extend: {
       backgroundImage: {
         'home-mobile': "url('/home/background-home-mobile.jpg')",
