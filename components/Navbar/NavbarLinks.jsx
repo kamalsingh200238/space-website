@@ -13,8 +13,8 @@ export default function NavbarLinks(props) {
 
   return (
     <div
-      className={`relative bg-white/20 text-lg text-white backdrop-blur-md transition-all duration-300 ease-in-out lg:min-w-[50%] mobile:fixed  mobile:inset-y-0 mobile:-right-2/3 mobile:w-2/3 mobile:bg-primary ${
-        props.navIsOpen ? 'mobile:-translate-x-full' : ''
+      className={`relative z-40 bg-white/30 text-lg text-white backdrop-blur-md transition-all duration-300 ease-in-out lg:min-w-[50%] mmd:fixed  mmd:inset-y-0 mmd:-right-2/3 mmd:w-2/3 mmd:bg-primary ${
+        props.navIsOpen ? 'mmd:-translate-x-full' : ''
       }`}
     >
       <div className="absolute top-8 right-8">
@@ -30,7 +30,7 @@ export default function NavbarLinks(props) {
           </div>
         </button>
       </div>
-      <div className="flex items-center px-8 md:h-24 md:min-w-[50%] md:gap-12 md:px-12 lg:ml-16 lg:pr-20 mobile:mt-20 mobile:flex-col mobile:items-start mobile:space-y-5 mobile:pl-9">
+      <div className="flex items-center px-8 tracking-[0.15625rem] md:h-24 md:min-w-[50%] md:gap-12 md:px-12 lg:ml-16 lg:pr-20 mmd:mt-20 mmd:flex-col mmd:items-start mmd:space-y-5 mmd:pl-9">
         <Link href="/">
           <a
             onClick={toggleNavbar}
