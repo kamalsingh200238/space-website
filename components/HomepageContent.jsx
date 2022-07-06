@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 export default function MainContent() {
   return (
-    <div className="px-6 pb-12 text-secondary md:px-32 md:pb-24 lg:pb-32">
+    <div className="mt-6 px-6 pb-12 text-secondary md:mt-24 md:px-32 md:pb-24 lg:mt-60 lg:pb-32">
       <div className="mx-auto grid max-w-[90%] place-items-center gap-y-20 gap-x-20 text-center md:gap-40 lg:grid-cols-2 lg:text-left">
         <div className="">
           <p className="font-BarlowCondensed text-xl uppercase tracking-[0.21875rem]">
@@ -17,9 +19,11 @@ export default function MainContent() {
           </p>
         </div>
         <div className="lg:justify9-self-center lg:self-end">
-          <button className="aspect-square w-40 rounded-full bg-white text-primary md:w-60 md:text-2xl ">
-            Explore
-          </button>
+          <Link href="/destination">
+            <button className="inline-block aspect-square w-40 rounded-full bg-white text-primary md:w-60 md:text-2xl">
+              Explore
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="mb-6 flex items-center justify-between p-6 font-BarlowCondensed md:mb-24 md:p-0 lg:pt-10">
+      <nav className="flex items-center justify-between p-6 font-BarlowCondensed md:p-0 lg:pt-10">
         {/* main Logo in navbar */}
         <div className="relative aspect-square w-10 md:m-6 md:w-12 lg:mx-12">
           <Image
