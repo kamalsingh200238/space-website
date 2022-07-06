@@ -8,9 +8,50 @@ module.exports = {
   ],
   theme: {
     screens: {
-      mobile: { max: '768px' },
+      //  min - width
+      sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '768px',
+      // => @media (min-width: 768px) { ... }
+
+      lg: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      // max - width
+      m2xl: { max: '1535px' },
+      // => @media (max-width: 1535px) { ... }
+
+      desktop: { max: '1279px' },
+      // => @media (max-width: 1279px) { ... }
+
+      laptop: { max: '1023px' },
+      // => @media (max-width: 1023px) { ... }
+
+      mobile: { max: '767px' },
+      // => @media (max-width: 767px) { ... }
+
+      msm: { max: '639px' },
       // => @media (max-width: 639px) { ... }
-      ...defaultTheme.screens,
+
+      // min and max together
+      osm: { min: '640px', max: '767px' },
+      // => @media (min-width: 640px and max-width: 767px) { ... }
+
+      omd: { min: '768px', max: '1023px' },
+      // => @media (min-width: 768px and max-width: 1023px) { ... }
+
+      olg: { min: '1024px', max: '1279px' },
+      // => @media (min-width: 1024px and max-width: 1279px) { ... }
+
+      oxl: { min: '1280px', max: '1535px' },
+      // => @media (min-width: 1280px and max-width: 1535px) { ... }
+
+      o2xl: { min: '1536px' },
+      // => @media (min-width: 1536px) { ... }
     },
 
     extend: {
