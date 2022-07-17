@@ -1,6 +1,23 @@
+// components
+import CrewContent from '../../components/CrewContent';
+
 import Image from 'next/image';
 
-export default function Crew() {
+// for getstatic props
+import fsPromises from 'fs/promises';
+import path from 'path';
+
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), '/posts/data.json');
+  const jsonData = await fsPromises.readFile(filePath);
+  const objectData = JSON.parse(jsonData);
+
+  return {
+    props: objectData,
+  };
+}
+
+export default function Crew({ crew }) {
   return (
     <>
       {/* Background Images for different devices */}
@@ -36,6 +53,9 @@ export default function Crew() {
           />
         </div>
       </div>
+      {/* content of the page */}
+      {/* passing the data of crew to the component */}
+      <CrewContent crew={crew} />
     </>
   );
 }
