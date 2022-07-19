@@ -34,7 +34,6 @@ export default function TechContent(props) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasWindow]);
-  console.log(hasWindow, windowDimensions);
   return (
     <>
       <div className="md:mt-10 lg:pl-40">
