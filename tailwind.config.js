@@ -56,6 +56,10 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        tech: '85px repeat(2, minmax(0, 1fr))',
+      },
       backgroundImage: {
         'right-arrow': "url('/crew/right-arrow.png')",
       },

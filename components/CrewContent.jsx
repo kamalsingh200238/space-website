@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useState } from 'react';
-
 // import Swiper and modules styles
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -33,7 +32,9 @@ export default function CrewContent(props) {
               navigation
               pagination={{ type: 'bullets', clickable: true }}
               // calling function that changes state
-              onSlideChange={(swiper) => changeDescription(swiper.activeIndex)}
+              onSlideChange={(swiper) => {
+                changeDescription(swiper.activeIndex);
+              }}
             >
               {props.crew.map((item, index) => (
                 <SwiperSlide key={index}>

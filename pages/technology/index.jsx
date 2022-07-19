@@ -1,6 +1,21 @@
 import Image from 'next/image';
+import TechContent from '../../components/TechContent';
 
-export default function Technology() {
+// for getstaticprops(getting data from posts)
+import fsPromises from 'fs/promises';
+import path from 'path';
+
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), '/posts/data.json');
+  const jsonData = await fsPromises.readFile(filePath);
+  const objectData = JSON.parse(jsonData);
+
+  return {
+    props: objectData,
+  };
+}
+
+export default function Technology({ technology }) {
   return (
     <>
       {/* Background Images for different devices */}
@@ -36,6 +51,7 @@ export default function Technology() {
           />
         </div>
       </div>
+      <TechContent technology={technology} />
     </>
   );
 }
