@@ -1,10 +1,11 @@
 import Image from 'next/image';
 // for carasoule
-import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade, Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
 import { useEffect, useState } from 'react';
 export default function TechContent(props) {
   const hasWindow = typeof window !== 'undefined';
@@ -43,7 +44,11 @@ export default function TechContent(props) {
         </div>
         <div className="mb-20 md:mb-24">
           <Swiper
-            modules={[Navigation, Pagination]}
+            effect={'fade'}
+            spaceBetween={30}
+            fadeEffect={{
+              crossFade: true,
+            }}
             navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
@@ -56,6 +61,7 @@ export default function TechContent(props) {
                 return `<span class=${className}> ${index + 1} </span>`;
               },
             }}
+            modules={[EffectFade, Navigation, Pagination]}
           >
             {props.technology.map((item, index) => (
               <SwiperSlide key={index}>
@@ -63,26 +69,20 @@ export default function TechContent(props) {
                 <div className="grid place-items-center gap-8 md:gap-12 lg:grid-cols-tech lg:grid-rows-1 lg:gap-20 lg:gap-x-32">
                   {/* 1st grid item */}
                   <div className="w-full lg:order-3">
-                    {windowDimensions.width < 1024 && (
-                      <div className="relative aspect-[375/170] w-full">
-                        <Image
-                          src={item.images.landscape}
-                          alt={`Image of ${item.name}`}
-                          quality={100}
-                          layout="fill"
-                        />
-                      </div>
-                    )}
-                    {windowDimensions.width >= 1024 && (
-                      <div className="relative aspect-square w-full">
-                        <Image
-                          src={item.images.portrait}
-                          alt={`Image of ${item.name}`}
-                          quality={100}
-                          layout="fill"
-                        />
-                      </div>
-                    )}
+                    <div className="relative aspect-[375/170] w-full lg:aspect-square">
+                      <Image
+                        src={
+                          item.images[
+                            windowDimensions.width >= 1024
+                              ? 'portrait'
+                              : 'landscape'
+                          ]
+                        }
+                        alt={`Image of ${item.name}`}
+                        quality={100}
+                        layout="fill"
+                      />
+                    </div>
                   </div>
 
                   {/* 2nd grid item */}
