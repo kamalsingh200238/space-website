@@ -1,12 +1,40 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function DestinationContent(props) {
+  const [current, setCurrent] = useState(0);
   // setting initial state as Moon (activeDestination is an object because that will help in rendering data to dom)
   const [activeDestination, setActiveDestination] = useState(
-    props.destinations[0]
+    props.destinations[current]
   );
+  const handleKeypress = (e) => {
+    //check if the event is left arrow or right arrow
+    if (e.key === 'ArrowRight') {
+      setCurrent((prev) => {
+        // checking value of current does not exceed 4
+        return prev < props.destinations.length - 1 ? prev + 1 : prev;
+      });
+    } else if (e.key === 'ArrowLeft') {
+      setCurrent((prev) => {
+        // checking value of current does not go below 0
+        return prev > 0 ? prev - 1 : prev;
+      });
+    }
+  };
 
+  useEffect(() => {
+    setActiveDestination(props.destinations[current]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current]);
+
+  // to listen to keypress
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeypress);
+    return () => {
+      window.removeEventListener('keydown', handleKeypress);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="mt-7 px-8 text-center font-BarlowCondensed md:mt-10 md:px-24 lg:mt-[4.5rem] lg:px-40">
       <div className="text-white">
@@ -28,13 +56,13 @@ export default function DestinationContent(props) {
           <div>
             {/* Printing all the destinations */}
             <div className="mb-7 flex justify-center gap-5 text-secondary">
-              {props.destinations.map((destination) => (
+              {props.destinations.map((destination, index) => (
                 // button that will change the destination
                 <button
                   key={destination.name}
                   // changing state
                   onClick={() => {
-                    setActiveDestination(destination);
+                    setCurrent(index);
                   }}
                 >
                   <p

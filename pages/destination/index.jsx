@@ -7,6 +7,7 @@ import path from 'path';
 // components
 import DestinationContent from '../../components/DestinationContent';
 import Head from 'next/head';
+import { useEffect } from 'react';
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), '/posts/data.json');
