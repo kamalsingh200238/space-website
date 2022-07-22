@@ -22,6 +22,5 @@
 
 @media (min-width: 64em) {
   :root {
-    --swiper-pagination-bullet-size: 5rem !important;
   }
 }

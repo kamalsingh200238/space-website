@@ -36,7 +36,7 @@ export default function NavbarLinks(props) {
             onClick={toggleNavbar}
             className={` ${
               router.asPath === '/' ? 'border-b-[3px]' : ''
-            } py-4 md:py-8`}
+            } py-4 md:py-8 mmd:w-full`}
           >
             <span className="mr-2 md:hidden lg:inline-block">00</span>Home
           </a>
@@ -46,7 +46,7 @@ export default function NavbarLinks(props) {
             onClick={toggleNavbar}
             className={` ${
               router.asPath === '/destination' ? 'border-b-[3px]' : ''
-            } py-4 md:py-8`}
+            } py-4 md:py-8 mmd:w-full`}
           >
             <span className="mr-2 md:hidden lg:inline-block">01</span>
             Destination
@@ -57,7 +57,7 @@ export default function NavbarLinks(props) {
             onClick={toggleNavbar}
             className={` ${
               router.asPath === '/crew' ? 'border-b-[3px]' : ''
-            } py-4 md:py-8`}
+            } py-4 md:py-8 mmd:w-full`}
           >
             <span className="mr-2 md:hidden lg:inline-block">02</span>Crew
           </a>
@@ -67,7 +67,7 @@ export default function NavbarLinks(props) {
             onClick={toggleNavbar}
             className={` ${
               router.asPath === '/technology' ? 'border-b-[3px]' : ''
-            } py-4 md:py-8`}
+            } py-4 md:py-8 mmd:w-full`}
           >
             <span className="mr-2 md:hidden lg:inline-block">03</span>Technology
           </a>

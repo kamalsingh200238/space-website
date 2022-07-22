@@ -1,10 +1,13 @@
 import Image from 'next/image';
 // for carasoule
+
+import SwiperCore, { Keyboard, Mousewheel } from 'swiper/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+SwiperCore.use([Keyboard, Mousewheel]);
 
 import { useEffect, useState } from 'react';
 export default function TechContent(props) {
@@ -48,6 +51,10 @@ export default function TechContent(props) {
             fadeEffect={{
               crossFade: true,
             }}
+            keyboard={{
+              enabled: true,
+              onlyInViewport: true,
+            }}
             navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
@@ -85,7 +92,7 @@ export default function TechContent(props) {
                   </div>
 
                   {/* 2nd grid item */}
-                  <div className="flex w-full justify-center gap-4 lg:order-1 lg:w-fit lg:justify-self-start">
+                  <div className="flex w-full justify-center gap-4 lg:order-1 lg:min-h-[28.125rem] lg:w-fit lg:items-center lg:justify-self-start">
                     <div className="swiper-button-prev !static !mt-0 rounded-full bg-white lg:!hidden"></div>
                     <div className="swiper-pagination !static !flex !w-fit !gap-4 lg:!flex-col lg:text-3xl"></div>
                     <div className="swiper-button-next !static !mt-0 rounded-full bg-white lg:!hidden"></div>
