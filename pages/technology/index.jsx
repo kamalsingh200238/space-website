@@ -4,6 +4,7 @@ import TechContent from '../../components/TechContent';
 // for getstaticprops(getting data from posts)
 import fsPromises from 'fs/promises';
 import path from 'path';
+import Head from 'next/head';
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), '/posts/data.json');
@@ -18,6 +19,11 @@ export async function getStaticProps() {
 export default function Technology({ technology }) {
   return (
     <>
+      <Head>
+        <title>Technology | Space Website</title>
+        <link rel="shortcut icon" href="/shared/logo.svg" type="image/x-icon" />
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
       {/* Background Images for different devices */}
       <div className={`absolute inset-0 -z-50`}>
         <div className="relative hidden h-full lg:block">

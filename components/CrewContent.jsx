@@ -86,6 +86,26 @@ export default function CrewContent(props) {
           </Swiper>
         </div>
       </div>
+      <style global jsx>
+        {`
+          :root {
+            --swiper-theme-color: #fff !important;
+            --swiper-pagination-bullet-size: 1rem !important;
+            --swiper-navigation-size: 1.25rem !important;
+            --swiper-navigation-color: #0b0d17 !important;
+          }
+
+          .swiper-pagination-bullet {
+            border-width: 1px;
+            border-color: rgb(255 255 255);
+          }
+          .swiper-button-next,
+          .swiper-button-prev {
+            width: calc(2 * var(--swiper-pagination-bullet-size)) !important;
+            height: calc(2 * var(--swiper-pagination-bullet-size)) !important;
+          }
+        `}
+      </style>
     </>
   );
 }

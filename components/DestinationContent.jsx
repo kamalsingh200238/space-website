@@ -18,6 +18,7 @@ export default function DestinationContent(props) {
         <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-40">
           <div className="relative mx-auto mb-7 aspect-square w-44 md:w-72 lg:w-full lg:max-w-md">
             <Image
+              priority
               src={activeDestination.images.webp}
               alt={`Picture of ${activeDestination.name}`}
               layout="fill"
